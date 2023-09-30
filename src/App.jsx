@@ -5,7 +5,7 @@ import EstatutosInfo from "./Components/estatutosInfo";
 
 function App() {
   return (
-    <div>
+    <div className="">
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
