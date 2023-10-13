@@ -1,5 +1,5 @@
 import { useState } from "react";
-import scheduleProfessor from "../scripts";
+import { scheduleProfessor } from "../scripts";
 import ModalInfo from "./infoForm";
 import toast, { Toaster } from "react-hot-toast";
 // import AsideMenu from "./asideMenu";
@@ -34,11 +34,10 @@ export default function FormHorario() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('data', data[event.target])
-    if(data)
-    console.log('evento', event.target)
-    if(data[event.target.name] === ""){
-      alert('Faltan Campos')
+    console.log("data", data[event.target]);
+    if (data) console.log("evento", event.target);
+    if (data[event.target.name] === "") {
+      alert("Faltan Campos");
     }
     notification();
     setInfo(scheduleProfessor(data));
@@ -57,26 +56,27 @@ export default function FormHorario() {
     // }
     // console.log(55, message);
   };
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggleSidebar = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   return (
-    <div className="flex flex-col w-full items-center justify-center">
-      <h2 className="flex w-2/3 text-white">Calcula tus horas: </h2>
-      <p className="text-white">
-        ***Completa el formulario con los datos requeridos, <br /> para poder
-        calcular tus horas lectivas y no lectivas.
-      </p>
-
-      <section className="border-2 border-cyanColor w-2/3 items-center justify-center m-4">
+    <div className="flex flex-col items-center justify-center w-[80%]">
+      <section className=" w-full flex flex-col items-center">
+        <h2 className="text-white">Calcula tus horas: </h2>
+        <p className="text-white">
+          ***Completa el formulario con los datos requeridos, <br /> para poder
+          calcular tus horas lectivas y no lectivas.
+        </p>
+      </section>
+      <section className="border-2 border-cyanColor rounded-lg w-[70%] items-center justify-center m-4">
         <form
-          className="bg-green-200 flex flex-col w-full content-center"
+          className="flex flex-col w-full content-center"
           onSubmit={handleSubmit}
         >
-          <label className="bg-sky-200 flex w-full justify-center items-center  py-2">
+          <label className=" flex w-full justify-center items-center  py-2">
             <span className="flex w-2/5 text-white">
               {" "}
               Cantidad de horas contrato:
@@ -90,7 +90,7 @@ export default function FormHorario() {
               placeholder="44 hrs"
             />
           </label>
-          <label className="bg-sky-200 flex w-full justify-center items-center  py-2">
+          <label className=" flex w-full justify-center items-center  py-2">
             <span className="w-2/5 text-white">
               {" "}
               Porcentaje de horas lectivas:
@@ -104,7 +104,7 @@ export default function FormHorario() {
               placeholder="60%"
             />
           </label>
-          <label className="bg-sky-200 flex w-full justify-center items-center  py-2">
+          <label className=" flex w-full justify-center items-center  py-2">
             <span className="w-2/5 text-white">
               {" "}
               Porcentaje de horas no lectivas:
@@ -117,7 +117,7 @@ export default function FormHorario() {
               type="number"
             />
           </label>
-          <label className="bg-sky-200 flex w-full justify-center items-center  py-2">
+          <label className=" flex w-full justify-center items-center  py-2">
             <span className="w-2/5 text-white">
               {" "}
               Duración de la hora pedagógica:
@@ -143,7 +143,7 @@ export default function FormHorario() {
               placeholder="45 minutos"
             />
           </label> */}
-          <section className="w-full flex bg-sky-200 items-center justify-center">
+          <section className="w-full flex items-center justify-center">
             <button className="my-4 group relative self-center h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
               <div className="absolute inset-0 w-3 bg-cyanColor transition-all duration-[1,m00ms] ease-out group-hover:w-full"></div>
               <span className="relative text-grayColor font-bold group-hover:text-white">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import FormHorario from "./formHorario";
 import { HeartIcon } from "../assets/icons";
+import HoursCalculator from "./hoursCalculator";
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -10,7 +11,7 @@ export default function HomePage() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 0);
   }
 
   useEffect(() => {
@@ -18,26 +19,29 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="bg-grayColor w-full h-screen flex flex-col">
+    <div className="w-full flex flex-col justify-center items-center">
       <header className="w-full">
         <NavBar />
       </header>
-      <main className="flex w-full items-center justify-center">
+      <main className="flex flex-col w-3/5 justify-center items-center content-center">
         {isLoading ? (
-          <h1 className="flex items-center justify-center w-1/5 bg-yellow-400">
+          <h1 className="flex items-center justify-center w-1/5 bg-yellow-400 h-screen">
             ...Loading{" "}
           </h1>
         ) : (
-          <section className="w-full">
-          <FormHorario />
-
+          <section className="flex w-full h-screen justify-center items-start">
+            <FormHorario />
           </section>
-
-
         )}
+
+        <HoursCalculator />
       </main>
       <footer className="flex w-full items-center justify-center text-white fixed bottom-0">
-        Hecho con <span className="mx-2"><HeartIcon /> </span>por Eric Illanes
+        Hecho con{" "}
+        <span className="mx-2">
+          <HeartIcon />{" "}
+        </span>
+        por Eric Illanes
       </footer>
     </div>
   );

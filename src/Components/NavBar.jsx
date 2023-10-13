@@ -1,3 +1,5 @@
+import { scrollingFunction } from "../scripts";
+
 export default function NavBar() {
   return (
     <nav className="w-full">
@@ -24,6 +26,12 @@ export default function NavBar() {
             className={`border-b-4 text-cyanColor font-bold border-transparent hover:border-green-500 mx-1.5 sm:mx-6`}
           >
             Más Información
+          </a>
+          <a
+            onClick={()=>{scrollingFunction('hours-calculator')}}
+            className={`border-b-4 text-cyanColor font-bold border-transparent hover:border-green-500 mx-1.5 sm:mx-6`}
+          >
+            Horario
           </a>
           <a
             href="/about"

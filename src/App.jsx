@@ -5,7 +5,7 @@ import EstatutosInfo from "./Components/estatutosInfo";
 
 function App() {
   return (
-    <div className="">
+    <div className="bg-grayColor flex w-full">
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
