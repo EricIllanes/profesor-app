@@ -30,7 +30,7 @@ export default function HoursCalculator() {
     },
     Viernes:{
       startMorning: "07:50",
-      exitMorning: "13:45",
+      exitMorning: "14:00",
       startAfternoon: "",
       exitAfternoon: "",
     },
