@@ -18,7 +18,6 @@
  
 
 export const scrollingFunction = (toWhere)=>{
-  console.log(toWhere)
 document.getElementById(toWhere).scrollIntoView({behavior:'smooth'})
 }
 
@@ -102,6 +101,6 @@ export const totalWeeklyHours = (hours) => {
       hoursWorked = `${integer}:${rest}`;
     }
   }
-  console.log({ hoursWorked });
+
   return hoursWorked;
 };

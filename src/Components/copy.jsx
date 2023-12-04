@@ -8,17 +8,15 @@ export default function HoursCalculator() {
     Jueves: { entrada: "08:00", salida: "18:00", almuerzo: 45 },
     Viernes: { entrada: "08:00", salida: "13:00", almuerzo: 45 },
   });
-  useEffect(() => {
-    console.log(hours);
-  }, [hours]);
+
   const totalHoursWorked = (entrada, salida, almuerzo) => {
     const entrieValue = entrada.split(":").map(Number);
-    console.log(entrieValue)
+ 
     const exitValue = salida.split(":").map(Number);
 
     const startMinute = entrieValue[0] * 60 + entrieValue[1];
     const exitMinute = exitValue[0] * 60 + exitValue[1];
-    console.log(startMinute, exitMinute)
+  
     const timeWorked = exitMinute - startMinute - almuerzo;
     const hoursWorked = timeWorked / 60;
 
@@ -26,7 +24,6 @@ export default function HoursCalculator() {
   };
 
   const handleInputChange = (dia, campo, valor) => {
-    console.log(dia, campo, valor);
     setHours((prevState) => ({
       ...prevState,
       [dia]: { ...prevState[dia], [campo]: valor },

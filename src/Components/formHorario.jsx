@@ -35,7 +35,6 @@ export default function FormHorario() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("data", data[event.target]);
-    if (data) console.log("evento", event.target);
     if (data[event.target.name] === "") {
       alert("Faltan Campos");
     }
