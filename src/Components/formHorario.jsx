@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { scheduleProfessor } from "../scripts";
 import ModalInfo from "./infoForm";
-import toast, { Toaster } from "react-hot-toast";
-// import AsideMenu from "./asideMenu";
+import "../styles/formHorario.css"
+import NavBar from "./navBar";
 
 export default function FormHorario() {
   const [data, setDataForm] = useState({
@@ -34,16 +34,14 @@ export default function FormHorario() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("data", data[event.target]);
     if (data[event.target.name] === "") {
       alert("Faltan Campos");
     }
-    notification();
+    // notification();
     setInfo(scheduleProfessor(data));
     setSend(!send);
   };
   const validateInputs = (event) => {
-    console.log("event", event.target.value);
     // console.log(111, event.target.name);
     // const name = event.target.name;
     // console.log(2222, name, 3333, data[name]);
@@ -55,28 +53,24 @@ export default function FormHorario() {
     // }
     // console.log(55, message);
   };
-  // const [isOpen, setIsOpen] = useState(false);
-
-  // const toggleSidebar = () => {
-  //   setIsOpen(!isOpen);
-  // };
 
   return (
-    <div className="flex flex-col items-center justify-center w-[80%]">
-      <section className=" w-full flex flex-col items-center">
-        <h2 className="text-white">Calcula tus horas: </h2>
-        <p className="text-white">
-          ***Completa el formulario con los datos requeridos, <br /> para poder
+    <div className="form-container">
+      <NavBar />
+      <section className="form-header-section">
+        <h2 className="title-section">Calcula tus horas: </h2>
+        <p className="formn-span-header">
+          ***Completa el formulario con los datos requeridos, para poder
           calcular tus horas lectivas y no lectivas.
         </p>
       </section>
-      <section className="border-2 border-cyanColor rounded-lg w-[70%] items-center justify-center m-4">
+      <section className="form-main-section">
         <form
-          className="flex flex-col w-full content-center"
+          // className="flex flex-col w-full content-center"
           onSubmit={handleSubmit}
         >
           <label className=" flex w-full justify-center items-center  py-2">
-            <span className="flex w-2/5 text-white">
+            <span className="flex w-2/5 text-black">
               {" "}
               Cantidad de horas contrato:
             </span>
@@ -129,19 +123,6 @@ export default function FormHorario() {
               placeholder="45 minutos"
             />
           </label>
-          {/* <label className="bg-sky-200 flex w-full justify-center items-center py-2">
-            <span className="w-2/5 text-white">
-              {" "}
-              Duración del período de almuerzo:
-            </span>
-            <input
-              onChange={handleChange}
-              name="durationLunch"
-              className="flex w-1/3 rounded-md border border-gray-300 focus:border-cyanColor focus:outline-none focus:ring-2 focus:ring-cyanColor py-1 px-1.5 text-gray-500"
-              type="number"
-              placeholder="45 minutos"
-            />
-          </label> */}
           <section className="w-full flex items-center justify-center">
             <button className="my-4 group relative self-center h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
               <div className="absolute inset-0 w-3 bg-cyanColor transition-all duration-[1,m00ms] ease-out group-hover:w-full"></div>
@@ -150,7 +131,6 @@ export default function FormHorario() {
               </span>
             </button>
           </section>
-          <Toaster />
         </form>
       </section>
 
@@ -196,5 +176,4 @@ export default function FormHorario() {
         <></>
       )} */}
     </div>
-  );
-}
+  )}

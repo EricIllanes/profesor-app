@@ -1,42 +1,52 @@
 import { useEffect, useState } from "react";
-import NavBar from "./NavBar";
+import NavBar from "./navBar";
 import FormHorario from "./formHorario";
 import { HeartIcon } from "../assets/icons";
 import HoursCalculator from "./hoursCalculator";
+import "../styles/homePage.css";
+import "../styles/common.css";
+import BentoGrid from "./bentoComponent";
 
 export default function HomePage() {
-  const [isLoading, setIsLoading] = useState(false);
-
-  async function probanding() {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 0);
-  }
-
   useEffect(() => {
-    probanding();
+    const footer = document.querySelector(".footer-homepage");
+    const sections = document.querySelectorAll(".section-view-homepage");
+    function checkCollision() {
+      const rectFooter = footer.getBoundingClientRect();
+
+      sections.forEach((section) => {
+        const rectSection = section.getBoundingClientRect();
+        if (rectFooter.bottom > rectSection.top) {
+          footer.classList.add("footer-collision");
+        } else {
+          footer.classList.remove("footer-collision");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", checkCollision);
+    window.addEventListener("resize", checkCollision);
+
+    return () => {
+      window.removeEventListener("scroll", checkCollision);
+      window.removeEventListener("resize", checkCollision);
+    };
   }, []);
 
   return (
-    <div className="w-full flex flex-col justify-center items-center">
-      <header className="w-full">
-        <NavBar />
-      </header>
-      <main className="flex flex-col w-3/5 justify-center items-center content-center">
-        {isLoading ? (
-          <h1 className="flex items-center justify-center w-1/5 bg-yellow-400 h-screen">
-            ...Loading{" "}
-          </h1>
-        ) : (
-          <section className="flex w-full h-screen justify-center items-start">
-            <FormHorario />
-          </section>
-        )}
-
-        <HoursCalculator />
+    <div className="div-padre-homepage">
+      <main className="container-homepage">
+        <section className="section-view-homepage">
+          <BentoGrid />
+        </section>
+        <section id="form-calculator" className="section-view-homepage">
+          <FormHorario />
+        </section>
+        <section id="hours-calculator" className="section-view-homepage">
+          <HoursCalculator />
+        </section>
       </main>
-      <footer className="flex w-full items-center justify-center text-white fixed bottom-0">
+      <footer className="footer-homepage">
         Hecho con{" "}
         <span className="mx-2">
           <HeartIcon />{" "}

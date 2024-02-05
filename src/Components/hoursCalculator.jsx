@@ -48,8 +48,7 @@ export default function HoursCalculator() {
 
   return (
     <div
-      id="hours-calculator"
-      className="flex w-full h-screen items-start justify-center"
+      className="flex w-full items-center justify-center bg-yellow-200"
     >
       <div className="overflow-x-auto">
         <h2 className="text-white">Horario Semanal</h2>

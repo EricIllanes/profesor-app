@@ -1,0 +1,118 @@
+.bentogrid-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  --s: 200px; /* control the size */
+
+  --c: #ffffffda, #ffffff 0.5deg 119.5deg, #ffffff00 120deg;
+  --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+  --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+  --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+  background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2),
+    var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0,
+    var(--g3) 0 calc(1.73 * var(--s)) #f8f8f8;
+  background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
+}
+
+.bentogrid {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 10px;
+  width: 900px;
+  height: 700px;
+}
+
+.bentogrid section {
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #bebebe;
+  transition: all 0.3s;
+}
+
+.bentogrid section:hover {
+  scale: 1.05;
+}
+
+.bentogrid section:nth-child(1) {
+  background-color: #80ccc9;
+  display: grid;
+  align-content: center;
+  grid-template-rows: 3fr 3fr 2fr;
+  grid-column: 1 / 3;
+  grid-row: 1 / 4;
+}
+
+.bentogrid section:nth-child(2) {
+  display: grid;
+  background-color: #ffbe98;
+  grid-template-rows: 3fr 3fr 2fr;
+  grid-column: 3 / 4;
+  grid-row: 1 / 4;
+}
+
+.bentogrid section:nth-child(3) {
+  display: grid;
+  background-color: #ffbe98;
+  grid-template-rows: 3fr 3fr 2fr;
+  grid-column: 1 / 2;
+  grid-row: 4 / 8;
+}
+
+.bentogrid section:nth-child(4) {
+  display: grid;
+  grid-template-rows: 3fr 3fr 2fr;
+  grid-column: 2 / 4;
+  grid-row: 4 / 7;
+}
+
+.bentogrid section:nth-child(5) {
+  background-color: #80ccc9;
+  display: grid;
+  grid-template-rows: 3fr 3fr 2fr;
+  grid-column: 2 / 4;
+  grid-row: 7 / 8;
+}
+
+.span-title {
+  color: white;
+  display: flex;
+  align-items: end;
+  font-size: 25px;
+  font-weight: 700;
+  margin-inline: 20px;
+}
+.bentogrid section:nth-child(4) .span-title,
+.span-link {
+  color: #51bbb7;
+}
+
+.bentogrid section:nth-child(4) .span-link {
+  color: #51bbb7;
+}
+
+.span-content {
+  /* background-color: #242424; */
+  display: flex;
+  color: #666666;
+  align-items: center;
+  margin-inline: 20px;
+  font-family: "Poppins";
+  font-size: 21px;
+}
+
+.span-link {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-inline: 20px;
+  font-family: "Poppins";
+}

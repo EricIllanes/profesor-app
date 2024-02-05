@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 import { scrollingFunction } from "../scripts";
 import { useLocation } from "react-router-dom";
+import "../styles/navBar.css"
+
+
 export default function NavBar() {
   const {pathname} = useLocation();
   useEffect(()=>{
-    console.log(pathname)
   }, [])
   return (
-    <nav className="w-full">
+    <nav className="navbar-container">
       <div className="flex flex-row justify-between items-center p-6 mx-auto text-gray-600 capitalize dark:text-gray-300 flew-row space-between">
         <div>
           <a
