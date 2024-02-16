@@ -3,7 +3,7 @@ import { totalHoursWorked, totalWeeklyHours} from "../scripts";
 import "../styles/hoursCalculator.css"
 
 export default function HoursCalculator() {
-
+  const prueba= 123
   const [hours, setHours] = useState({
     Lunes: {
       startMorning: "07:50",
