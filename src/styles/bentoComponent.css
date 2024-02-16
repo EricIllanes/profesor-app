@@ -5,8 +5,8 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
-  --s: 200px; /* control the size */
 
+  /* --s: 200px;
   --c: #ffffffda, #ffffff 0.5deg 119.5deg, #ffffff00 120deg;
   --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
   --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
@@ -14,7 +14,7 @@
   background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2),
     var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0,
     var(--g3) 0 calc(1.73 * var(--s)) #f8f8f8;
-  background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
+  background-size: calc(2 * var(--s)) calc(3.46 * var(--s)); */
 }
 
 .bentogrid {
@@ -115,4 +115,19 @@
   text-decoration: underline;
   margin-inline: 20px;
   font-family: "Poppins";
+}
+
+@media (max-width: 1440px) {
+
+  .bentogrid{
+    height: 540px;
+  }
+
+  .span-title{
+    font-size: 20px;
+  }
+
+  .span-content, .span-link{
+    font-size: 18px
+  }
 }

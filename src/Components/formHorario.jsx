@@ -59,18 +59,18 @@ export default function FormHorario() {
       <NavBar />
       <section className="form-header-section">
         <h2 className="title-section">Calcula tus horas: </h2>
-        <p className="formn-span-header">
+        <p className="form-span-header">
           ***Completa el formulario con los datos requeridos, para poder
           calcular tus horas lectivas y no lectivas.
         </p>
       </section>
       <section className="form-main-section">
         <form
-          // className="flex flex-col w-full content-center"
+          className="form-main"
           onSubmit={handleSubmit}
         >
           <label className=" flex w-full justify-center items-center  py-2">
-            <span className="flex w-2/5 text-black">
+          <span className="form-span">
               {" "}
               Cantidad de horas contrato:
             </span>
@@ -84,7 +84,7 @@ export default function FormHorario() {
             />
           </label>
           <label className=" flex w-full justify-center items-center  py-2">
-            <span className="w-2/5 text-white">
+          <span className="form-span">
               {" "}
               Porcentaje de horas lectivas:
             </span>
@@ -98,7 +98,7 @@ export default function FormHorario() {
             />
           </label>
           <label className=" flex w-full justify-center items-center  py-2">
-            <span className="w-2/5 text-white">
+            <span className="form-span">
               {" "}
               Porcentaje de horas no lectivas:
             </span>
@@ -111,7 +111,7 @@ export default function FormHorario() {
             />
           </label>
           <label className=" flex w-full justify-center items-center  py-2">
-            <span className="w-2/5 text-white">
+          <span className="form-span">
               {" "}
               Duración de la hora pedagógica:
             </span>
